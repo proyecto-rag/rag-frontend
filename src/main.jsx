@@ -3,11 +3,15 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 import { RagApp } from "./RagApp";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <RagApp />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <RagApp />
+      </BrowserRouter>
+    </Provider>
   </StrictMode>
 );
